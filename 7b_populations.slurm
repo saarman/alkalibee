@@ -23,8 +23,7 @@ popmap="/project/piru_hylaues/KochProjects/alkalibeepopgen/popmap2/nomia_popmap_
 in_path="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/refmap_output13"
 
 # Code
-
-populations -P $in_path --popmap $popmap -O $out_path -p 5 -r 0.75 -t 8 --write-random-snp --vcf
+populations -P $in_path --popmap $popmap -O $out_path -p 1 -r 0.25 -t 8 --write-random-snp --vcf --plink 
 
 # Code usage
 # ref_map.pl --samples dir --popmap path [-s spacer] --out-path path [--rm-pcr-duplicates] [-X prog:"opts" ...]
