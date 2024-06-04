@@ -23,7 +23,9 @@ popmap="/project/piru_hylaues/KochProjects/alkalibeepopgen/popmap2/nomia_popmap_
 in_path="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/refmap_output13"
 in_file="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/populations_output_2/populations.snps"
 
-# Code: Filter out SNPs with missingness above thresholds, but keep all individuals for now.
+# Code
+
+#Filter out SNPs with missingness above thresholds, but keep all individuals for now.
 
 #PLINK to convert VCF to PLINK:
 plink --vcf ${in_file}.vcf --double-id --allow-extra-chr --make-bed --out $in_file
@@ -49,7 +51,7 @@ vcftools --vcf ${in_file}.vcf \
 --positions ${in_file}_mind50.pos \
 --recode --out ${in_file}_filtered
 
-# Code options:
+# Code usage
 
 # Missing rate per SNP
 # Subsequent analyses can be set to automatically exclude SNPs on the basis of missing genotype rate, with the --geno option: the default is to include all SNPS (i.e. --geno 1). To include only SNPs with a 90% genotyping rate (10% missing) use
