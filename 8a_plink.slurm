@@ -19,7 +19,7 @@ module load plink
 
 # Input and output
 out_path="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/populations_output_2"
-popmap="/project/piru_hylaues/KochProjects/alkalibeepopgen/popmap2/nomia_popmap_plate1_plate2"
+popmap="/project/piru_hylaues/KochProjects/alkalibeepopgen/popmap2/nomia_dummy_plate2"
 in_path="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/refmap_output13"
 in_file="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/populations_output_2/populations.snps"
 
