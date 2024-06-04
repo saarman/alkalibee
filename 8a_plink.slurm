@@ -1,10 +1,32 @@
-#########################################
-#STEP 3: Filter out SNPs with missingness above thresholds, but keep all individuals for now.
-#########################################
+#!/bin/bash
+
+# job standard output will go to the file slurm-%j.out (where %j is the job ID)
+
+#SBATCH --time=24:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=40   # 20 processor core(s) per node X 2 threads per core
+#SBATCH --partition=short    # standard node(s)
+#SBATCH --job-name="stacks"
+#SBATCH --mail-user=jonathan.koch@usda.gov   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+
+# LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
+
+# Load Module
+module load plink
+
+# Input and output
+out_path="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/populations_output_2"
+popmap="/project/piru_hylaues/KochProjects/alkalibeepopgen/popmap2/nomia_popmap_plate1_plate2"
+in_path="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/refmap_output13"
+
+# Code: Filter out SNPs with missingness above thresholds, but keep all individuals for now.
+
 #PLINK to convert VCF to PLINK:
-NAME=stacks2_all_noRPs
-cd /home/nps25/project/results/nRef_2019_ddRAD/VCF_files/
-plink --vcf $NAME.recode.vcf --double-id --allow-extra-chr --make-bed --out $NAME
+NAME=
+plink --vcf $NAME.vcf --double-id --allow-extra-chr --make-bed --out $NAME
 plink --bfile $NAME --double-id --allow-extra-chr --recode tab --out $NAME
 
 #PLINK to filter by missing data:
