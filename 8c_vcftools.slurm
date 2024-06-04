@@ -21,7 +21,7 @@ echo "Start time : $now"
 module load vcftools/0.1.16
 
 # Input and output
-in_file="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/populations_output_2/populations.snps.vcf"
+in_file="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/populations_output_2/populations.snps_filtered.recode.vcf"
 
 # Code
 
