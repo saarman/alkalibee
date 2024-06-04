@@ -33,7 +33,7 @@ plink --bfile ${in_file} --double-id --allow-extra-chr --recode tab --out $in_fi
 
 #PLINK to filter by missing data, note this threshold is how much MISSING data is allowed, not how COMPLETE it needs to be (as it is with STACKS)
 cp /dev/null $in_file.missing.log
-plink --file $in_file --geno .7 --double-id --allow-extra-chr --recode --out ${in_file}_geno70           >> ${in_file}.missing.log
+plink --file ${in_file} --geno .7 --double-id --allow-extra-chr --recode --out ${in_file}_geno70           >> ${in_file}.missing.log
 plink --file ${in_file}_geno70 --mind .7 --double-id --allow-extra-chr --recode --out ${in_file}_mind70    >> ${in_file}.missing.log
 plink --file ${in_file}_mind70 --geno .65 --double-id --allow-extra-chr --recode --out ${in_file}_geno65    >> ${in_file}.missing.log
 plink --file ${in_file}_geno65 --mind .65 --double-id --allow-extra-chr --recode --out ${in_file}_mind65    >> ${in_file}.missing.log
