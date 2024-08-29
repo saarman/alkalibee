@@ -20,12 +20,17 @@
 module load stacks/2.64
 
 # Input and output files
-in_file="/project/piru_hylaues/KochProjects/alkalibeepopgen/data/Saarman/Bee_ddRAD_plate2/Bee_ddRAD_plate2.fastq.gz"
-out_path="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/process_radtags_plate2"
-barcode_file="/project/piru_hylaues/KochProjects/alkalibeepopgen/barcodes/barcodes_plate2_plusC"
-
+in_file1="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/bee_ddRAD_plate1.fastq.gz"
+in_file2="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/bee_ddRAD_plate2.fastq.gz"
+out_path="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed/"
+barcode_file1="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/barcodes_plate1_plusC.txt"
+barcode_file2="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/barcodes_plate2_plusC.txt"
 # Function
-process_radtags -f $in_file -b $barcode_file -o $out_path \
+process_radtags -f $in_file1 -b $barcode_file1 -o $out_path \
+                -r -c -q --inline-null -e ecoRI \
+                --adapter-1 CTCTTTCCCTACACGACGCTCTTCCGATCT \
+		# --disable-rad-check
+process_radtags -f $in_file2 -b $barcode_file2 -o $out_path \
                 -r -c -q --inline-null -e ecoRI \
                 --adapter-1 CTCTTTCCCTACACGACGCTCTTCCGATCT \
 		# --disable-rad-check
