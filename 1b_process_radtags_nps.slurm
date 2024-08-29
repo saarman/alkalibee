@@ -25,6 +25,7 @@ in_file2="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/Bee_ddRAD
 out_path="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed/"
 barcode_file1="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/barcodes_plate1_plusC.txt"
 barcode_file2="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/barcodes_plate2_plusC.txt"
+
 # Function
 process_radtags -f $in_file1 -b $barcode_file1 -o $out_path \
                 -r -c -q --inline-null -e ecoRI \
@@ -34,6 +35,9 @@ process_radtags -f $in_file2 -b $barcode_file2 -o $out_path \
                 -r -c -q --inline-null -e ecoRI \
                 --adapter-1 CTCTTTCCCTACACGACGCTCTTCCGATCT \
 		# --disable-rad-check
+
+# Permissions
+chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 
 # Explanation of parameters:
 
