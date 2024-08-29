@@ -9,11 +9,18 @@
 ```
 cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw
 tar –xvzf bee_ddRAD_plate1.tar.gz
-tar -xvfj bee_ddRAD_plate2.tar
-
+mv ./data/Saarman/ddRAD/ddRAD.fastq.gz ./bee_ddRAD_plate1.fastq.gz
 ```
 
-## change permissions
+# Change permissions
 ```
-chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw
+chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
+```
+
+# Submit your job to slurm 
+https://www.chpc.utah.edu/documentation/software/slurm.php#usingslurm
+
+```
+cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_scripts
+sbatch SlurmScript.sh
 ```
