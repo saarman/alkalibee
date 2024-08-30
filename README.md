@@ -1,4 +1,9 @@
-# A place to keep track of ddRAD bioinformatics steps
+# bee_ddRAD bioinformatics steps
+Nomia population genomics with ddRAD seq with illumina reads, enzymes EcoRI and MspI, 350-550 bp size selection (Blue Pippin set to 460-660 bp to account for 103 bp of adaptors/primers added to each fragment.
+ 
+Culex species identification and blood meal analysis with de novo assembly of illumina reads from amplicon resequencing (COI, Ace2, cqm1)
+
+## A place to keep track of ddRAD bioinformatics steps
 
 # Logging onto CHPC with Terminal on a mac
 1. Open Terminal
