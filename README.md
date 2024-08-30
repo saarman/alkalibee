@@ -29,7 +29,6 @@ chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 
 # Submit your job
 
-
 ## Pull any changes from Github  
 https://www.chpc.utah.edu/documentation/software/git-scm.php#qr
 ```
@@ -41,4 +40,14 @@ https://www.chpc.utah.edu/documentation/software/slurm.php#usingslurm
 ```
 cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_scripts/alkalibee/
 sbatch 1a_process_radtags_nps.slurm
+```
+##  Checking the status of your job
+https://www.chpc.utah.edu/documentation/software/slurm.php#squeue  
+```
+squeue --me
+```
+
+## Change permissions (again)
+```
+chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 ```
