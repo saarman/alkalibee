@@ -16,8 +16,8 @@ Port: 21
 Drag and drop from local disk.  
 /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw  
 
+## To unzip a .tar.gz file:
 ```
-cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw
 tar –xvzf bee_ddRAD_plate1.tar.gz
 mv ./data/Saarman/ddRAD/ddRAD.fastq.gz ./bee_ddRAD_plate1.fastq.gz
 ```
