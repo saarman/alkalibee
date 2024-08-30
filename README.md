@@ -1,5 +1,5 @@
 # bee_ddRAD bioinformatics steps
-Nomia population genomics with [Saarman ddRADseq protocol](https://docs.google.com/document/d/1fbrfyLTfIlvvffxJgiXUt4KfkHRMW-tx/edit?usp=sharing&ouid=111289447482543500025&rtpof=true&sd=true), Illumina NextSeq 2000 P1 300 cycles, 300 bp from forward read only, enzymes EcoRI and MspI, 350-550 bp size selection (Blue Pippin set to 460-660 bp to account for 103 bp of adaptors/primers added to each fragment.
+Nomia population genomics with [Saarman ddRADseq protocol](https://docs.google.com/document/d/1fbrfyLTfIlvvffxJgiXUt4KfkHRMW-tx/edit?usp=sharing&ouid=111289447482543500025&rtpof=true&sd=true), Illumina NextSeq 2000 P1 300 cycles, 300 bp from forward read only, enzymes EcoRI and MspI, 350-550 bp size selection (Blue Pippin set to 460-660 bp to account for 103 bp of adaptors/primers added before size selection step).
 
 ## A place to keep track of ddRAD bioinformatics steps
 
