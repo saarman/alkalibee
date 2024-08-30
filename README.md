@@ -27,10 +27,12 @@ mv ./data/Saarman/ddRAD/ddRAD.fastq.gz ./bee_ddRAD_plate1.fastq.gz
 chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 ```
 
+## Pull any changes from Github
+
 # Submit your job to slurm 
 https://www.chpc.utah.edu/documentation/software/slurm.php#usingslurm
 
 ```
-cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_scripts
+cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_scripts/alkalibee/
 sbatch 1a_process_radtags_nps.slurm
 ```
