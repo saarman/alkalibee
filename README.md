@@ -8,12 +8,13 @@
 # Prepare input files  
 
 ## Upload files to CHPC group1 storage
-SFTP file transfer protocol with Cyberduck worked easily.
-Select SFTP at the top.
-Server: notchpeak
-User: u6036559
-Port: 21
-Drag and drop from local disk.
+SFTP file transfer protocol with Cyberduck worked easily.  
+Select SFTP at the top.  
+Server: notchpeak  
+User: u6036559  
+Port: 21  
+Drag and drop from local disk.  
+/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw  
 
 ```
 cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw
