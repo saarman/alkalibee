@@ -21,7 +21,7 @@ module load stacks/2.64
 
 # Input and output files
 in_file1="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/bee_ddRAD_plate1.fastq.gz"
-in_file2="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/Bee_ddRAD_plate2_.fastq.gz"
+in_file2="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/bee_ddRAD_plate2.fastq.gz"
 out_path="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed/"
 barcode_file1="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/barcodes_plate1_plusC.txt"
 barcode_file2="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/barcodes_plate2_plusC.txt"
