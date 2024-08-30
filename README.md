@@ -32,5 +32,5 @@ https://www.chpc.utah.edu/documentation/software/slurm.php#usingslurm
 
 ```
 cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_scripts
-sbatch SlurmScript.sh
+sbatch 1a_process_radtags_nps.slurm
 ```
