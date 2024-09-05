@@ -15,12 +15,12 @@
 #SBATCH --mail-type=FAIL
 
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
+
+# Load Module
 module load fastqc/0.12.1
 
-# Replace "input_folder" with the actual path to your folder containing FASTQ files
+# Input and output files
 input_folder="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/process_radtags_plate2"
-
-# Replace "output_folder" with the desired path for FastQC results
 output_folder="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/fastqc_plate2"
 
 # Create the output folder if it doesn't exist
