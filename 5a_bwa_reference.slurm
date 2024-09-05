@@ -16,6 +16,9 @@
 
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
 
+# Load modules
+module load bwa/0.7.17
+
 # Replace these variables with the actual paths and filenames
 input_folder="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/process_radtags_plate2"
 output_folder="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/bwa/aligned_plate2"
