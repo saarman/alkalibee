@@ -2,24 +2,31 @@
 
 # job standard output will go to the file slurm-%j.out (where %j is the job ID)
 
-#SBATCH --time=168:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --partition=saarman-shared-np   
+#SBATCH --account=saarman-np
+#SBATCH --time=24:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --mem=24576 # memory given in MB
 #SBATCH --nodes=1   # number of nodes
-#SBATCH --ntasks-per-node=40   # 20 processor core(s) per node X 2 threads per core
-#SBATCH --partition=medium    # standard node(s)
+#SBATCH --ntasks-per-node=16   # 20 processor core(s) per node X 2 threads per core
 #SBATCH --job-name="bwa"
-#SBATCH --mail-user=jonathan.koch@usda.gov   # email address
+#SBATCH --mail-user=norah.saarman@usu.edu   # email address
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
 
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
-module load bwa/0.7.17
-module load samtools/1.16.1
+
+# Load modules
+module load bwa/2020_03_19
+module load samtools/1.16
 
 # Replace these variables with the actual paths and filenames
-input_folder="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/process_radtags_plate2"
-output_folder="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/bwa/aligned_plate2"
-reference_genome="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/bwa/reference_genome/GCA_003710045.2_USU_Nmel_1.3_genomic.fa"
+input_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed/"
+output_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/"
+reference_genome="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/ref/GCF_003710045.2_USU_Nmel_1.3_genomic.fna"
+
+# Permissions
+chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 
 for fastq_file in "$input_folder"/*.fq.gz; do
     if [ -f "$fastq_file" ]; then
@@ -33,6 +40,9 @@ for fastq_file in "$input_folder"/*.fq.gz; do
         echo "Alignment completed for $sample_name"
     fi
 done
+
+# Permissions
+chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 
 # Resource
 # https://catchenlab.life.illinois.edu/stacks/manual/#refmapbyhand
