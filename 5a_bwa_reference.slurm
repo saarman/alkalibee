@@ -22,10 +22,19 @@ module load bwa/2020_03_19
 # Replace these variables with the actual paths and filenames
 input_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed/"
 output_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/"
-reference_genome="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/GCA_003710045.2_USU_Nmel_1.3_genomic.fa"
+
+# Download reference
+cd $output_folder
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/710/045/GCF_003710045.2_USU_Nmel_1.3/GCF_003710045.2_USU_Nmel_1.3_genomic.fna.gz
 
 # Permissions
 chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 
-cd $output_folder
-bwa index -a bwtsw GCA_003710045.2_USU_Nmel_1.3_genomic.fa
+# Unzip reference
+gzip -d GCF_003710045.2_USU_Nmel_1.3_genomic.fna.gz 
+
+# Index reference
+bwa index -a bwtsw GCA_003710045.2_USU_Nmel_1.3_genomic.fna
+
+# Permissions
+chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
