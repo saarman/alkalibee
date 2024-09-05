@@ -30,13 +30,13 @@ barcode_file2="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_raw/barc
 process_radtags -f $in_file1 -b $barcode_file1 -o $out_path \
                 -r -c -q --inline-null -e ecoRI \
                 --adapter-1 CTCTTTCCCTACACGACGCTCTTCCGATCT \
-		--filter-illumina --disable-rad-check
+		--filter-illumina --disable-rad-check --barcode-dist-1 2
 cp ${out_path}/process_radtags.bee_ddRAD_raw.log ${out_path}/process_radtags-%j-plate1.log
 
 process_radtags -f $in_file2 -b $barcode_file2 -o $out_path \
                 -r -c -q --inline-null -e ecoRI \
                 --adapter-1 CTCTTTCCCTACACGACGCTCTTCCGATCT \
-		--filter-illumina --disable-rad-check
+		--filter-illumina --disable-rad-check --barcode-dist-1 2
 cp ${out_path}/process_radtags.bee_ddRAD_raw.log ${out_path}/process_radtags-%j-plate2.log
 
 # Permissions
