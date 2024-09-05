@@ -17,6 +17,8 @@
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
 
 # Replace these variables with the actual paths and filenames
-module load bwa/0.7.17
+input_folder="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/process_radtags_plate2"
+output_folder="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/bwa/aligned_plate2"
+reference_genome="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/bwa/reference_genome/GCA_003710045.2_USU_Nmel_1.3_genomic.fa"
 
 bwa index -a bwtsw GCA_003710045.2_USU_Nmel_1.3_genomic.fa
