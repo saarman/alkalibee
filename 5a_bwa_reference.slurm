@@ -24,8 +24,7 @@ input_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed
 output_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/"
 reference_genome="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/GCA_003710045.2_USU_Nmel_1.3_genomic.fa"
 
-# Create the output folder if it doesn't exist
-mkdir -p "$output_folder"
+# Permissions
 chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 
 cd $output_folder
