@@ -8,7 +8,7 @@
 #SBATCH --mem=24576 # memory given in MB
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks-per-node=16   # 20 processor core(s) per node X 2 threads per core
-#SBATCH --job-name="fastqc"
+#SBATCH --job-name="multiqc"
 #SBATCH --mail-user=norah.saarman@usu.edu   # email address
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
@@ -20,7 +20,11 @@
 module load  multiqc/1.12
 
 # Input and output files
-in_path="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/fastqc_plate2/"
-outdir="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/fastqc_plate2/multiqc"
+in_path="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_fastqc/"
+outdir="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_fastqc/multiqc/"
+
+# Create the output folder if it doesn't exist
+mkdir -p "$outdir"
+chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 
 multiqc $in_path --outdir $outdir
