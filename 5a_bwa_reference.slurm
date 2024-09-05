@@ -17,11 +17,16 @@
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
 
 # Load modules
-module load bwa/0.7.17
+module load bwa/2020_03_19
 
 # Replace these variables with the actual paths and filenames
-input_folder="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/process_radtags_plate2"
-output_folder="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/bwa/aligned_plate2"
-reference_genome="/project/piru_hylaues/KochProjects/alkalibeepopgen/stacks_pipeline/bwa/reference_genome/GCA_003710045.2_USU_Nmel_1.3_genomic.fa"
+input_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed/"
+output_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/"
+reference_genome="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/GCA_003710045.2_USU_Nmel_1.3_genomic.fa"
 
+# Create the output folder if it doesn't exist
+mkdir -p "$output_folder"
+chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
+
+cd $output_folder
 bwa index -a bwtsw GCA_003710045.2_USU_Nmel_1.3_genomic.fa
