@@ -33,8 +33,5 @@ chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 # Unzip reference
 gzip -d GCF_003710045.2_USU_Nmel_1.3_genomic.fna.gz 
 
-# Index reference
-bwa index -a bwtsw GCA_003710045.2_USU_Nmel_1.3_genomic.fna
-
 # Permissions
 chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
