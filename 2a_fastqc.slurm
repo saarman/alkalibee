@@ -8,7 +8,7 @@
 #SBATCH --mem=24576 # memory given in MB
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks-per-node=16   # 20 processor core(s) per node X 2 threads per core
-#SBATCH --job-name="stacks_process"
+#SBATCH --job-name="fastqc"
 #SBATCH --mail-user=norah.saarman@usu.edu   # email address
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
