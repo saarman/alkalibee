@@ -21,7 +21,7 @@ module load bwa/2020_03_19
 
 # Replace these variables with the actual paths and filenames
 input_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed/"
-output_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/"
+output_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/ref/"
 
 # Download reference
 cd $output_folder
