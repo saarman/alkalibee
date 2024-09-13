@@ -4,10 +4,12 @@
 
 #SBATCH --partition=saarman-shared-np   
 #SBATCH --account=saarman-np
-#SBATCH --time=24:00:00   # walltime limit (HH:MM:SS)
-#SBATCH --mem=24576 # memory given in MB
+#SBATCH --time=336:00:00   # walltime limit (HH:MM:SS) max is 336
+#SBATCH --mem=450g # memory given in MB or add g for gb
 #SBATCH --nodes=1   # number of nodes
-#SBATCH --ntasks-per-node=16   # 20 processor core(s) per node X 2 threads per core
+#SBATCH --ntasks=16 # 32 processor core(s) total, use half = 16
+#SBATCH --ntasks-per-node=4 # 16 cores divided by 4 = 4
+#SBATCH --cpus-per-task=4 # threads 
 #SBATCH --job-name="bwa"
 #SBATCH --mail-user=norah.saarman@usu.edu   # email address
 #SBATCH --mail-type=BEGIN
