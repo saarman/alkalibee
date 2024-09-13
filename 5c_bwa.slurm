@@ -7,7 +7,7 @@
 #SBATCH --time=336:00:00   # walltime limit (HH:MM:SS) max is 336
 #SBATCH --mem=450g # memory given in MB or add g for gb
 #SBATCH --nodes=1   # number of nodes
-#SBATCH --ntasks=4 # 32 processor core(s) total, use half = 16 or number of threads
+#SBATCH --ntasks=24 # 32 processor core(s) total, use half = 16 or number of threads
 #SBATCH --array=1-16
 #SBATCH --job-name="bwa"
 #SBATCH --mail-user=norah.saarman@usu.edu   # email address
