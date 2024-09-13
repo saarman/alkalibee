@@ -47,11 +47,11 @@ sbatch 1a_process_radtags_nps.slurm
 
 ## Submit to slurm as an array, as in for bwa mem
 https://www.chpc.utah.edu/documentation/software/slurm-mpi-jobarrays.php  
-Limit to 18 jobs with %18 because I asked for 18 tasks in slurm header
+Should I limit the number of jobs with %16 to match tasks in slurm header?
 
 ```
 cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_scripts/alkalibee/
-sbatch --array=1-96%18 5b_bwa.slurm
+sbatch --array=1-16 5b_bwa.slurm
 ```
 
 ##  Checking the status of your job
