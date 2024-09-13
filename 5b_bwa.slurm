@@ -1,4 +1,4 @@
-o#!/bin/bash
+#!/bin/bash
 
 # job standard output will go to the file slurm-%j.out (where %j is the job ID)
 
