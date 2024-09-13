@@ -8,7 +8,6 @@
 #SBATCH --mem=450g # memory given in MB or add g for gb
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks=16 # 32 processor core(s) total, use half = 16
-#SBATCH --ntasks-per-node=4 # 16 cores divided by 4 = 4
 #SBATCH --cpus-per-task=4 # threads 
 #SBATCH --job-name="bwa"
 #SBATCH --mail-user=norah.saarman@usu.edu   # email address
@@ -16,6 +15,7 @@
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
 
+# I wonder if I can use --ntasks-per-node=4 and cpus per task?
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
 
 # Load modules
