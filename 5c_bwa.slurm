@@ -8,7 +8,7 @@
 #SBATCH --mem=450g # memory given in MB or add g for gb
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks=24 # 32 processor core(s) total, use half = 16 or number of threads
-#SBATCH --array=1-16
+#SBATCH --array=1-127
 #SBATCH --job-name="bwa"
 #SBATCH --mail-user=norah.saarman@usu.edu   # email address
 #SBATCH --mail-type=BEGIN
@@ -26,9 +26,6 @@ module load samtools/1.16
 input_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed"
 output_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa"
 reference_genome="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/ref/GCF_003710045.2_USU_Nmel_1.3_genomic.fna"
-
-# Permissions
-chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 
 # Create a list of tasks for bwa mem
 echo -n "" > bwa-mem-2024-09-13.tasks
