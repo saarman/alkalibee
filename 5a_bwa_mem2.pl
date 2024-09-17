@@ -15,7 +15,7 @@ foreach $fq1 (@ARGV){
         $ind = $1;
         $fq1 =~ m/([A-Za-z_\-0-9]+)\.fq\.gz$/ or die "failed match for file $fq1\n";
         $file = $1;
-        system "/uufs/chpc.utah.edu/common/home/u6000989/source/bwa-mem2-2.0pre2_x64-linux/bwa-mem2 mem -t 1 -k 19 -r 1.5 -P -S $genome $fq1 | samtools view -b | samtools sort --threads 1 > $ind.bam ; echo \"Alignment completed for $sample_name\" ";
+        system "/uufs/chpc.utah.edu/common/home/u6000989/source/bwa-mem2-2.0pre2_x64-linux/bwa-mem2 mem -t 1 -k 19 -r 1.5 -P -S $genome $fq1 | samtools view -b | samtools sort --threads 1 > $ind.bam \n; echo \"Alignment completed for $ind\" ";
 
         $pm->finish;
 }
