@@ -4,14 +4,14 @@
 #SBATCH --ntasks=20          # same as $max set in ForkManager
 #SBATCH --account=saarman-np
 #SBATCH --partition=saarman-shared-np   
-#SBATCH --job-name=bwa-mem
+#SBATCH --job-name=bwa-mem2
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
 #SBATCH --mail-user=norah.saarman@usu.edu
 
 # Load the specific version of samtools
-module load samtools/1.16     ## Version: 1.16 (using htslib 1.16)
+module load samtools/1.16
 
 # Change to the directory where the input data is located
 cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed
