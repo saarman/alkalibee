@@ -1,7 +1,6 @@
 #!/usr/bin/perl
-#
-# alignment with bwa mem 
-#
+
+# Alignment with bwa mem2
 
 use strict;
 use warnings;
@@ -13,6 +12,9 @@ my $pm = Parallel::ForkManager->new($max);  # Create a new Parallel::ForkManager
 # Path to the reference genome file
 my $genome = "/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/ref/GCF_003710045.2_USU_Nmel_1.3_genomic.fna";
 
+# Output directory
+my $output_dir = "/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa";
+
 FILES:
 foreach my $fq1 (@ARGV) {  # Iterate over each file passed as an argument
     $pm->start and next FILES;  # Fork a new process and move to the next file if in the parent process
@@ -22,7 +24,7 @@ foreach my $fq1 (@ARGV) {  # Iterate over each file passed as an argument
     my $ind = $1;  # Store the identifier in $ind
 
     # Run the BWA-MEM2 alignment command and process the output with samtools
-    my $cmd = "/uufs/chpc.utah.edu/common/home/u6000989/source/bwa-mem2-2.0pre2_x64-linux/bwa-mem2 mem -t 1 -k 19 -r 1.5 -P -S $genome $fq1 | samtools view -b | samtools sort --threads 1 > ${ind}.bam";
+    my $cmd = "/uufs/chpc.utah.edu/common/home/u6000989/source/bwa-mem2-2.0pre2_x64-linux/bwa-mem2 mem -t 1 -k 19 -r 1.5 $genome $fq1 | samtools view -b | samtools sort --threads 1 > ${output_dir}/${ind}.bam";
     system($cmd) == 0 or die "system $cmd failed: $?";
 
     print "Alignment completed for $ind\n";
@@ -31,6 +33,7 @@ foreach my $fq1 (@ARGV) {  # Iterate over each file passed as an argument
 }
 
 $pm->wait_all_children;  # Wait for all child processes to finish
+
 
 
 # bwa-mem2 mem #options
