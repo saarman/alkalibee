@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH --time=240:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks=20
+#SBATCH --ntasks=10
 #SBATCH --account=saarman-np
 #SBATCH --partition=saarman-shared-np   
 #SBATCH --job-name=bwa-mem2
