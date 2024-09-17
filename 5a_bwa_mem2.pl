@@ -16,8 +16,8 @@ my $output_dir = "/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa";
 # Path to samtools
 my $samtools = "/uufs/chpc.utah.edu/sys/installdir/samtools/1.16/bin/samtools";
 
-# Path to the compiled bwa-mem2 binary
-my $bwa_mem2 = "/path/to/compiled/bwa-mem2";  # Replace with the actual path
+# Path to bwa-mem2 binary
+my $bwa_mem2 = "/uufs/chpc.utah.edu/common/home/u6000989/source/bwa-mem2-2.0pre2_x64-linux/bwa-mem2";
 
 FILES:
 foreach my $fq1 (@ARGV) {  # Iterate over each file passed as an argument
@@ -37,6 +37,7 @@ foreach my $fq1 (@ARGV) {  # Iterate over each file passed as an argument
 }
 
 $pm->wait_all_children;  # Wait for all child processes to finish
+
 
 
 
