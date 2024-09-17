@@ -5,6 +5,8 @@
 #SBATCH --account=saarman-np
 #SBATCH --partition=saarman-shared-np   
 #SBATCH --job-name=bwa-mem2
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
 #SBATCH --mail-user=norah.saarman@usu.edu
 
