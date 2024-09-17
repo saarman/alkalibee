@@ -1,12 +1,12 @@
 #!/bin/sh
-#SBATCH --time=336:00:00
+#SBATCH --time=240:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=20
-#SBATCH --account=gompert-np
-#SBATCH --partition=gompert-np
+#SBATCH --account=saarman-np
+#SBATCH --partition=saarman-shared-np   
 #SBATCH --job-name=bwa-mem2
 #SBATCH --mail-type=FAIL
-#SBATCH --mail-user=zach.gompert@usu.edu
+#SBATCH --mail-user=norah.saarman@usu.edu
 
 module load samtools
 ##Version: 1.16 (using htslib 1.16)
