@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --time=240:00:00
+#SBATCH --time=336:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=20
 #SBATCH --account=gompert-np
