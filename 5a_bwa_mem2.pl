@@ -3,24 +3,35 @@
 # alignment with bwa mem 
 #
 
-
+use strict;
+use warnings;
 use Parallel::ForkManager;
-my $max = 20;
-my $pm = Parallel::ForkManager->new($max);
+
+my $max = 20;  # Set the maximum number of parallel processes to 20
+my $pm = Parallel::ForkManager->new($max);  # Create a new Parallel::ForkManager object with the specified maximum
+
+# Path to the reference genome file
 my $genome = "/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa/ref/GCF_003710045.2_USU_Nmel_1.3_genomic.fna";
 
 FILES:
-foreach $fq1 (@ARGV){
-        $pm->start and next FILES; ## fork
-        $ind = $1;
-        $fq1 =~ m/([A-Za-z_\-0-9]+)\.fq\.gz$/ or die "failed match for file $fq1\n";
-        $file = $1;
-        system "/uufs/chpc.utah.edu/common/home/u6000989/source/bwa-mem2-2.0pre2_x64-linux/bwa-mem2 mem -t 1 -k 19 -r 1.5 -P -S $genome $fq1 | samtools view -b | samtools sort --threads 1 > $ind.bam \n; echo \"Alignment completed for $ind\" ";
+foreach my $fq1 (@ARGV) {  # Iterate over each file passed as an argument
+    $pm->start and next FILES;  # Fork a new process and move to the next file if in the parent process
 
-        $pm->finish;
+    # Extract the identifier from the filename
+    $fq1 =~ m/([A-Za-z_\-0-9]+)\.fq\.gz$/ or die "failed match for file $fq1\n";
+    my $ind = $1;  # Store the identifier in $ind
+
+    # Run the BWA-MEM2 alignment command and process the output with samtools
+    my $cmd = "/uufs/chpc.utah.edu/common/home/u6000989/source/bwa-mem2-2.0pre2_x64-linux/bwa-mem2 mem -t 1 -k 19 -r 1.5 -P -S $genome $fq1 | samtools view -b | samtools sort --threads 1 > ${ind}.bam";
+    system($cmd) == 0 or die "system $cmd failed: $?";
+
+    print "Alignment completed for $ind\n";
+
+    $pm->finish;  # End the child process
 }
 
-$pm->wait_all_children;
+$pm->wait_all_children;  # Wait for all child processes to finish
+
 
 # bwa-mem2 mem #options
 #-----------------------------
