@@ -17,7 +17,8 @@ my $output_dir = "/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_bwa";
 my $samtools = "/uufs/chpc.utah.edu/sys/installdir/samtools/1.16/bin/samtools";
 
 # Path to bwa-mem2 binary
-my $bwa_mem2 = "/uufs/chpc.utah.edu/common/home/u6000989/source/bwa-mem2-2.0pre2_x64-linux/bwa-mem2";
+my $bwa_mem2 = "/uufs/chpc.utah.edu/common/home/u6000989/source/bwa-mem2-2.0pre2_x64-linux/bwa-mem2";  
+# replace this with $(which bwa-mem2) after loading the module from my home directory
 
 FILES:
 foreach my $fq1 (@ARGV) {  # Iterate over each file passed as an argument
