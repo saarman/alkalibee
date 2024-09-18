@@ -10,8 +10,9 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --mail-user=norah.saarman@usu.edu
 
-# Load the specific version of samtools
+# Load the specific version of samtools and bwa-mem2
 module load samtools/1.16
+module load bwa-mem/2.2.1
 
 # Change to the directory where the input data is located
 cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed
