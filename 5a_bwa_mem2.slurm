@@ -1,7 +1,8 @@
 #!/bin/sh
 #SBATCH --time=336:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks=20          # same as $max set in ForkManager
+#SBATCH --ntasks=4          # same as $max set in ForkManager
+#SBATCH --mem-per-task=120G
 #SBATCH --account=saarman-np
 #SBATCH --partition=saarman-shared-np   
 #SBATCH --job-name=bwa-mem2
