@@ -29,7 +29,7 @@ foreach my $fq1 (@ARGV) {  # Iterate over each file passed as an argument
     my $ind = $1;  # Store the identifier in $ind
 
     # Run the BWA-MEM2 alignment command and process the output with samtools
-    my $cmd = "$bwa_mem2 mem -t 1 -k 19 -r 1.5 $genome $fq1 | $samtools view -b | $samtools sort --threads 1 > ${output_dir}/${ind}.bam";
+    my $cmd = "$bwa_mem2 mem -t 1 -k 19 -r 1.5 -K 1000000 -c 1000 $genome $fq1 | $samtools view -b | $samtools sort --threads 1 > ${output_dir}/${ind}.bam";
     system($cmd) == 0 or die "system $cmd failed: $?";
 
     print "Alignment completed for $ind\n";
