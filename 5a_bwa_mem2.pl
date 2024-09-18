@@ -28,8 +28,8 @@ foreach my $fq1 (@ARGV) {  # Iterate over each file passed as an argument
     $fq1 =~ m/([A-Za-z_\-0-9]+)\.fq\.gz$/ or die "failed match for file $fq1\n";
     my $ind = $1;  # Store the identifier in $ind
 
-    # Run the BWA-MEM2 alignment command and process the output with samtools
-    my $cmd = "$bwa_mem2 mem -t 1 -k 19 -r 1.5 -K 1000000 -c 1000 $genome $fq1 | $samtools view -b | $samtools sort --threads 1 > ${output_dir}/${ind}.bam";
+    # Run the BWA-MEM2 alignment and process with samtools, could add -K 1000000 -c 1000 to reduce mem?
+    my $cmd = "$bwa_mem2 mem -t 1 -k 19 -r 1.5 $genome $fq1 | $samtools view -b | $samtools sort --threads 1 > ${output_dir}/${ind}.bam";
     system($cmd) == 0 or die "system $cmd failed: $?";
 
     print "Alignment completed for $ind\n";
