@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Parallel::ForkManager;
 
-my $max = 4;  # Set the maximum number of parallel processes to 4 for testing, target is 20
+my $max = 1;  # Set the maximum number of parallel processes to 1 for testing, target is 20
 my $pm = Parallel::ForkManager->new($max);  # Create a new Parallel::ForkManager object with the specified maximum
 
 # Path to the reference genome file
