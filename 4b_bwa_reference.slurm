@@ -17,7 +17,8 @@
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
 
 # Load modules
-module load bwa/2020_03_19
+#module load bwa/2020_03_19
+module load bwa-mem/2.2.1
 
 # Replace these variables with the actual paths and filenames
 input_folder="/uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_processed/"
@@ -28,7 +29,8 @@ chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 
 # Index reference
 cd $output_folder
-bwa index -a bwtsw GCF_003710045.2_USU_Nmel_1.3_genomic.fna
+#bwa index -a bwtsw GCF_003710045.2_USU_Nmel_1.3_genomic.fna
+bwa-mem2 index GCF_003710045.2_USU_Nmel_1.3_genomic.fna
 
 # Permissions
 chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
