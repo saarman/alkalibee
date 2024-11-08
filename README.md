@@ -32,13 +32,20 @@ chmod -R g+w /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD*
 
 # Submit your job
 
-## Pull any changes from Github  
-https://www.chpc.utah.edu/documentation/software/git-scm.php#qr
+## Github
+***Run just ONCE: Clone from Github***  
+Before running, I need to make these files on github, and then use git to clone
+```
+# Just once:
+cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_scripts/
+git clone https://github.com/saarman/alkalibee
+```
+***Need to run every time: Pull any changes from Github***  
 ```
 cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_scripts/alkalibee/
 git pull
 ```
-## Submit to slurm
+***Need to run every time: Submit to slurm***
 https://www.chpc.utah.edu/documentation/software/slurm.php#usingslurm
 ```
 cd /uufs/chpc.utah.edu/common/home/saarman-group1/bee_ddRAD_scripts/alkalibee/
